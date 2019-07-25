@@ -49,7 +49,7 @@
                                 </li>
                             @endif
                         @else
-                            @can('subscribe-only')
+                            @can('subscribe-only', Auth::user())
                             <li class="nav-item">
                             <a class="nav-link" href="{{url('/subscribe')}}">{{ __('Subscribe') }}</a>
                             </li>
