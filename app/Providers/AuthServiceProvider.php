@@ -25,6 +25,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('subscribe-only', function ($user){
+//            return $user->subscribe;
+            if($user->subscribe == 1){
+                return true;
+            }
+            return false;
+        });
     }
 }
